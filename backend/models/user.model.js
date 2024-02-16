@@ -13,7 +13,6 @@ const userSchema = new mongoose.Schema({
   password: {
     type: String,
     required: true,
-    unique: true,
     minlength: 6,
   },
   gender: {
@@ -21,12 +20,11 @@ const userSchema = new mongoose.Schema({
     required: true,
     enum: ["male", "female"],
   },
-  profilePicture: {
+  profilePic: {
     type: String,
     default: "",
   },
 });
-
 
 const User = mongoose.model("User", userSchema);
 
